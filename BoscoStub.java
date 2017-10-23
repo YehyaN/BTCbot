@@ -17,12 +17,12 @@ public class BoscoStub
 	{
 		BoscoBot john = new BoscoBot();
 
-		System.out.println (john.getGreeting());
-		System.out.println (john.getExitMessage());
+		System.out.println (john.typeWriter(john.getGreeting()));
+		System.out.println (john.typeWriter(john.getExitMessage()));
 		Scanner in = new Scanner (System.in);
 		String statement = in.nextLine();
 
-		while (!statement.equals("bye"))
+		while (!statement.equals("Bye"))
 		{
 			System.out.println (john.typeWriter(john.getResponse(statement)));
 			statement = in.nextLine();

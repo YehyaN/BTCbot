@@ -53,10 +53,10 @@ public class BoscoBot
 		else if (findKeyword(statement, "president") >= 0
 						&& findKeyword(statement, "school") >= 0)
 		{
-			response = "The president of Bosco Tech is Xavier Jimenez.";
+			response = "The President of Bosco Tech is Xavier Jimenez.";
 		}
 		else if (findKeyword(statement, "home") >= 0
-			//|| findKeyword(statement, "school") >= 0
+				|| findKeyword(statement, "school") >= 0
 				|| findKeyword(statement, "church") >= 0
 				|| findKeyword(statement, "playground") >= 0)
 			{
@@ -123,7 +123,7 @@ public class BoscoBot
 	    System.out.printf("%c", result);
 	    try
 			{
-	        Thread.sleep(100);//0.5s pause between characters
+	        Thread.sleep(50);//0.5s pause between characters
 	    }
 			catch(InterruptedException ex)
 			{
