@@ -5,8 +5,8 @@
  *    Uses advanced search for keywords
  * </li></ul>
  *
- * @author Laurie White
- * @version April 2012
+ * @author Yehya Nasser
+ * @version October 2017
  */
 
 public class BoscoBot
