@@ -1,3 +1,4 @@
+import java.util.Random;
 /**
  * A program to carry on conversations with a human user.
  * This version:
@@ -102,10 +103,10 @@ public class BoscoBot
 		{
 			response = "Farts are nice.";
 		}
-		else if(findKeyword(statement, "") >= 0)
+		/*else if(findKeyword(statement, "") >= 0)
 		{
 			response = "Speak up! I can't hear a word you are saying!";
-		}
+		}*/
 		else
 		{
 			response = getRandomResponse();
@@ -222,7 +223,27 @@ public class BoscoBot
 	 *
 	 * @return a non-committal string
 	 */
-	private String getRandomResponse()
+	 private String getRandomResponse ()
+ 	{
+ 		Random r = new Random ();
+ 		return randomResponses [r.nextInt(randomResponses.length)];
+ 	}
+
+ 	private String [] randomResponses = {"Interesting, tell me more",
+ 			"Hmmm.",
+ 			"Do you really think so?",
+ 			"You don't say.",
+			"Do you really think so?",
+			"CSEE is a nice tech!",
+			"ACE is fun for architecture!",
+			"MSET is well known for Mr. Curiel's hillarious roasts!",
+			"I care for all the children!",
+			"MAT is where the a e s t h e t i c s are at!",
+			"IDEA's robotics team sure is cool!"
+ 	};
+}
+
+	/*private String getRandomResponse()
 	{
 		final int NUMBER_OF_RESPONSES = 10;
 		double r = Math.random();
@@ -272,3 +293,4 @@ public class BoscoBot
 		return response;
 	}
 }
+*/
