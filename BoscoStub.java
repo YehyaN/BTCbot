@@ -24,7 +24,6 @@ public class BoscoStub
 
 		while (!statement.equals("Bye"))
 		{
-			System.out.println("cool");
 			System.out.println (john.typeWriter(john.getResponse(statement)));
 			statement = in.nextLine();
 		}
