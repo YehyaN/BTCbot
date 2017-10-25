@@ -43,7 +43,11 @@ public class BoscoBot
 	public String getResponse(String statement)
 	{
 		String response = "";
-		if (findKeyword(statement, "Hello") >= 0)
+		if (statement.length() == 0)
+		{
+			response = "Say something, please.";
+		}
+		else if (findKeyword(statement, "Hello") >= 0)
 		{
 			response = "Hello my friend!";
 		}
