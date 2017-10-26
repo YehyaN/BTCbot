@@ -6,7 +6,7 @@ import java.util.Random;
  *    Uses advanced search for keywords
  * </li></ul>
  *
- * @author Yehya Nasser
+ * @author Yehya Nasser, James Villagrana
  * @version October 2017
  */
 
@@ -106,6 +106,16 @@ public class BoscoBot
 		else if(findKeyword(statement, "fart") >= 0)
 		{
 			response = "Farts are nice.";
+		}
+		else if(findKeyword(statement, "discover") >= 0
+			||findKeyword(statement, "discover the tech") >= 0)
+		{
+			response = "Bosco Tech is an all-male Catholic high school that combines rigorous college-preparatory and innovative technological education. The science, engineering, technology and math (STEM) curriculum allows students to exceed university admission requirements while completing extensive integrated coursework in one of several applied science and engineering programs.";
+		}
+		else if (findKeyword(statement, "mission") >= 0
+				|| findKeyword(statement, "mission statement") >=0)
+		{
+			response = "Guided by the Salesian educational system of St. John Bosco, Don Bosco Technical Institute is a Catholic high school that offers a rigorous college preparatory curriculum—uniquely integrating academics and technology—to qualified young men of all religious, ethnic and socioeconomic backgrounds. As a Christian faith community, the school prepares and equips students to be life-long learners who are dedicated men of faith and integrity, committed to leading successful lives of distinguished service and social justice.";
 		}
 		/*else if(findKeyword(statement, "") >= 0)
 		{

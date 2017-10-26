@@ -2,17 +2,12 @@ import java.util.Scanner;
 
 /**
  * A simple class to run the BoscoBot class.
- * @author Yehya Nasser
+ * @author Yehya Nasser, James Villagrana
  * @version October 2017
  */
 
 public class BoscoStub
 {
-
-	/**
-	 * Create a Magpie, give it user input, and print its replies.
-	 */
-
 	public static void main(String[] args)
 	{
 		BoscoBot john = new BoscoBot();
