@@ -1,22 +1,9 @@
 import java.util.Random;
-/**
- * A program to carry on conversations with a human user.
- * This version:
- * <ul><li>
- *    Uses advanced search for keywords
- * </li></ul>
- *
- * @author Yehya Nasser, James Villagrana
- * @version October 2017
- */
+ //author Yehya Nasser, James Villagrana
+ //version October 2017
 
 public class BoscoBot
 {
-	/**
-	 * Get a default greeting
-	 *
-	 * @return a greeting
-	 */
 
 	public String getGreeting()
 	{
@@ -31,14 +18,6 @@ public class BoscoBot
 		System.out.println("Nice to meet you, " + name);
 		return " ";
 	}
-
-	/**
-	 * Gives a response to a user statement
-	 *
-	 * @param statement
-	 *            the user statement
-	 * @return a response based on the rules given
-	 */
 
 	public String getResponse(String statement)
 	{
@@ -117,10 +96,6 @@ public class BoscoBot
 		{
 			response = "Guided by the Salesian educational system of St. John Bosco, Don Bosco Technical Institute is a Catholic high school that offers a rigorous college preparatory curriculum—uniquely integrating academics and technology—to qualified young men of all religious, ethnic and socioeconomic backgrounds. As a Christian faith community, the school prepares and equips students to be life-long learners who are dedicated men of faith and integrity, committed to leading successful lives of distinguished service and social justice.";
 		}
-		/*else if(findKeyword(statement, "") >= 0)
-		{
-			response = "Speak up! I can't hear a word you are saying!";
-		}*/
 		else
 		{
 			response = getRandomResponse();
@@ -147,23 +122,6 @@ public class BoscoBot
 		}
 		return " ";
 	}
-
-	/**
-	 * Search for one word in phrase. The search is not case
-	 * sensitive. This method will check that the given goal
-	 * is not a substring of a longer string (so, for
-	 * example, "I know" does not contain "no").
-	 *
-	 * @param statement
-	 *            the string to search
-	 * @param goal
-	 *            the string to search for
-	 * @param startPos
-	 *            the character of the string to begin the
-	 *            search at
-	 * @return the index of the first occurrence of goal in
-	 *         statement or -1 if it's not found
-	 */
 
 	private int findKeyword(String statement, String goal,
 			int startPos)
@@ -213,30 +171,11 @@ public class BoscoBot
 		return -1;
 	}
 
-	/**
-	 * Search for one word in phrase. The search is not case
-	 * sensitive. This method will check that the given goal
-	 * is not a substring of a longer string (so, for
-	 * example, "I know" does not contain "no"). The search
-	 * begins at the beginning of the string.
-	 *
-	 * @param statement
-	 *            the string to search
-	 * @param goal
-	 *            the string to search for
-	 * @return the index of the first occurrence of goal in
-	 *         statement or -1 if it's not found
-	 */
 	private int findKeyword(String statement, String goal)
 	{
 		return findKeyword(statement, goal, 0);
 	}
 
-	/**
-	 * Pick a default response to use if nothing else fits.
-	 *
-	 * @return a non-committal string
-	 */
 	 private String getRandomResponse ()
  	{
  		Random r = new Random ();
@@ -256,55 +195,3 @@ public class BoscoBot
 			"IDEA's robotics team sure is cool!"
  	};
 }
-
-	/*private String getRandomResponse()
-	{
-		final int NUMBER_OF_RESPONSES = 10;
-		double r = Math.random();
-		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
-		String response = "";
-
-		if (whichResponse == 0)
-		{
-			response = "Interesting, tell me more.";
-		}
-		else if (whichResponse == 1)
-		{
-			response = "Hmmm.";
-		}
-		else if (whichResponse == 2)
-		{
-			response = "Do you really think so?";
-		}
-		else if (whichResponse == 3)
-		{
-			response = "You don't say.";
-		}
-		else if (whichResponse == 4)
-		{
-			response = "CSEE is a nice tech!";
-		}
-		else if (whichResponse == 5)
-		{
-			response = "ACE is fun for architecture!";
-		}
-		else if (whichResponse == 6)
-		{
-			response = "MSET is well known for Mr. Curiel's hillarious roasts!";
-		}
-		else if (whichResponse == 7)
-		{
-			response = "I care for all the children!";
-		}
-		else if (whichResponse == 8)
-		{
-			response = "MAT is where the a e s t h e t i c s are at!";
-		}
-		else if (whichResponse == 9)
-		{
-			response = "IDEA's robotics team sure is cool!";
-		}
-		return response;
-	}
-}
-*/
