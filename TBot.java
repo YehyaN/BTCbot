@@ -1,4 +1,4 @@
-public class TBot extends BTCBot {
+public class TBot extends BoscoBot {
   public boolean foundTech;
   private String statement;
   private boolean csee, mat, mset, idea, ace;
