@@ -2,11 +2,14 @@ public class TBot extends BoscoBot {
   public boolean foundTech;
   private String statement;
   private boolean csee, mat, mset, idea, ace;
+  private boolean what, who, when, how, why;
+  public boolean foundQuestion;
   TBot(String sentence)
   {
     statement = sentence;
     // Check to see if the statement involves technologies
-    csee = false, mat = false, mset = false, idea = false, ace = false;
+    csee = false; mat = false; mset = false; idea = false; ace = false;
+    what = false; who = false; when = false; how = false; why = false;
     switch(findTechnology())
     {
       case 1: // csee
@@ -33,6 +36,32 @@ public class TBot extends BoscoBot {
         foundTech = false;
         break;
     }
+    switch(findQuestion())
+    {
+      case 1:
+        what = true;
+        foundQuestion = true;
+        break;
+      case 2:
+        who = true;
+        foundQuestion = true;
+        break;
+      case 3:
+        when = true;
+        foundQuestion = true;
+        break;
+      case 4:
+        how = true;
+        foundQuestion = true;
+        break;
+      case 5:
+        why = true;
+        foundQuestion = true;
+        break;
+      default:
+        foundQuestion = false;
+        break;
+    }
   }
   public int findTechnology()
   {
@@ -48,12 +77,12 @@ public class TBot extends BoscoBot {
     String [] matKeys = {"mat", "media"};
     String [] msetKeys = {"mset", "materials", "metalurgy", "metal tech"};
     String [] ideaKeys = {"idea", "design", "integrated design", "engineering and art"};
-    String [] aceKeys = {"ace", "arcitecture", "cunstruction", "civil engineering", "home depot"};
+    String [] aceKeys = {"ace", "architecture", "cunstruction", "civil engineering", "home depot"};
 
     // csee
     for(int i = 0; i < cseeKeys.length; i++)
     {
-      if(findKeyword(toLowerCase(statement), cseeKeys[i], 0) >= 0)
+      if(findKeyword(statement.toLowerCase(), cseeKeys[i], 0) >= 0)
       {
         return 1; // 1 For csee
       }
@@ -61,7 +90,7 @@ public class TBot extends BoscoBot {
     // mat
     for(int i = 0; i < matKeys.length; i++)
     {
-      if(findKeyword(toLowerCase(statement), matKeys[i], 0) >= 0)
+      if(findKeyword(statement.toLowerCase(), matKeys[i], 0) >= 0)
       {
         return 2; // 2 For mat
       }
@@ -69,7 +98,7 @@ public class TBot extends BoscoBot {
     // mset
     for(int i = 0; i < msetKeys.length; i++)
     {
-      if(findKeyword(toLowerCase(statement), msetKeys[i], 0) >= 0)
+      if(findKeyword(statement.toLowerCase(), msetKeys[i], 0) >= 0)
       {
         return 3; // 3 For mset
       }
@@ -77,7 +106,7 @@ public class TBot extends BoscoBot {
     // idea
     for(int i = 0; i < ideaKeys.length; i++)
     {
-      if(findKeyword(toLowerCase(statement), ideaKeys[i], 0) >= 0)
+      if(findKeyword(statement.toLowerCase(), ideaKeys[i], 0) >= 0)
       {
         return 4; // 4 For idea
       }
@@ -85,7 +114,7 @@ public class TBot extends BoscoBot {
     // ace
     for(int i = 0; i < aceKeys.length; i++)
     {
-      if(findKeyword(toLowerCase(statement), aceKeys[i], 0) >= 0)
+      if(findKeyword(statement.toLowerCase(), aceKeys[i], 0) >= 0)
       {
         return 5; // 5 For ace
       }
@@ -93,6 +122,131 @@ public class TBot extends BoscoBot {
     // No technologies found
     return -1;
   }
-
-
+  public int findQuestion()
+  {
+    /*
+    Returns 1 for what
+    Returns 2 for who
+    Returns 3 for when
+    Returns 4 for how
+    Returns 5 for why
+    Returns -1 for none of the above
+    */
+    if(findKeyword(statement.toLowerCase(), "what", 0) >= 0) // what
+    {
+      return 1; // 1 For what
+    }
+    else if(findKeyword(statement.toLowerCase(), "who", 0) >= 0) // who
+    {
+      return 2; // 2 For who
+    }
+    else if(findKeyword(statement.toLowerCase(), "when", 0) >= 0) // when
+    {
+      return 3; // 3 For when
+    }
+    else if(findKeyword(statement.toLowerCase(), "how", 0) >= 0) // how
+    {
+      return 4; // 4 For how
+    }
+    else if(findKeyword(statement.toLowerCase(), "why", 0) >= 0) // why
+    {
+      return 5; // 5 For why
+    }
+    else
+    {
+      return -1;
+    }
+  }
+  public String getResponse()
+  {
+    String response = "";
+    if(when)
+    {
+      response = "Freshmen choose their technology majors in January.";
+    }
+    else if(how)
+    {
+      response = "During the summer, incomming freshmen spend a week in each technology. After that, they narrow their selection down to 3 technologies that they spend 6 weeks in each during the first semester. Then, in January, they make their final technology selection.";
+    }
+    else if(csee)
+    {
+      if(what)
+      {
+        response = "CSEE stands for Computer Science and Electrical Engineering. In CSEE, we learn how to program in C++, Java, and Python and basic electronics principals.";
+      }
+      else if(who)
+      {
+        response = "The teachers in CSEE are Edward Sepulveda and Al Lopez.";
+      }
+      else if(why)
+      {
+        response = "A student should choose CSEE if they are interested in computers, electrical engineering, or like math and logic";
+      }
+    }
+    else if(mat)
+    {
+      if(what)
+      {
+        response = "MAT stands for Media Arts Technology. In MAT they learn marketing, app design, web design, and Photoshop.";
+      }
+      else if(who)
+      {
+        response = "The teachers in MAT are Brendan Chua and Casey Hernandez.";
+      }
+      else if(why)
+      {
+        response = "A student should choose MAT if they are interested in business, marketing, and art.";
+      }
+    }
+    else if(mset)
+    {
+      if(what)
+      {
+        response = "MSET stands for Materials Science Engineering Technology. In MSET they learn about materials and how they work.";
+      }
+      else if(who)
+      {
+        response = "The teachers in MSET are Jim Curiel and Gaurav Nagalia.";
+      }
+      else if(why)
+      {
+        response = "A student should choose MSET if they are interested in chemistry, forensics, or medicine.";
+      }
+    }
+    else if(idea)
+    {
+      if(what)
+      {
+        response = "IDEA stands for Integrated Design Engineering and Art. In IDEA, they learn design and prototyping aswell as some architecture and robotics.";
+      }
+      else if(who)
+      {
+        response = "The teachers in IDEA are Luis Garza and Rory Mulcahey.";
+      }
+      else if(why)
+      {
+        response = "A student should choose IDEA if they are interested in design, mechanical engineering, or want to be an inventor.";
+      }
+    }
+    else if(ace)
+    {
+      if(what)
+      {
+        response = "ACE stands for Architecture and Cunstruction Engineering. In ACE, they learn about architecture, civil engineering, and green energy.";
+      }
+      else if(who)
+      {
+        response = "The teachers in ACE are Clifford Reid and Diego Lopez.";
+      }
+      else if(why)
+      {
+        response = "A student should choose ACE if they are interested in buildings, architecture, or aspire to work at home depot.";
+      }
+    }
+    else
+    {
+      response = "";
+    }
+    return response;
+  }
 }
