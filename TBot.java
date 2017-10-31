@@ -47,6 +47,7 @@ public class TBot extends BTCBot {
     String [] cseeKeys = {"csee", "computer science", "electrical engineering", "programming", "coding", "cs", "ee"};
     String [] matKeys = {"mat", "media"};
     String [] msetKeys = {"mset", "materials", "metalurgy", "metal tech"};
+    String [] ideaKeys = {"idea", "design", "integrated design", "engineering and art"};
     String [] aceKeys = {"ace", "arcitecture", "cunstruction", "civil engineering", "home depot"};
 
     // csee
