@@ -15,7 +15,7 @@ public class GeneralBot extends BoscoBot // Used for general, non-bosco specific
   @Override
   public String getResponse()
   {
-    return "";
+    return ""; // W.I.P. NOT READY YET.
   }
   public void newStatement(String sentence)
   {
