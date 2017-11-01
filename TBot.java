@@ -1,9 +1,10 @@
-public class TBot extends BoscoBot {
+public class TBot extends BoscoBot // Used for technology statements
+{
   public boolean foundTech;
   private String statement;
   private boolean csee, mat, mset, idea, ace;
   private boolean what, who, when, how, why;
-  public boolean foundQuestion;
+  private boolean foundQuestion;
   TBot(String sentence)
   {
     statement = sentence;
@@ -31,6 +32,9 @@ public class TBot extends BoscoBot {
       case 5:
         foundTech = true;
         ace = true;
+        break;
+      case 6:
+        foundTech = true;
         break;
       default:
         foundTech = false;
@@ -63,7 +67,7 @@ public class TBot extends BoscoBot {
         break;
     }
   }
-  public int findTechnology()
+  private int findTechnology()
   {
     /*
     Returns 1 for csee
@@ -71,6 +75,7 @@ public class TBot extends BoscoBot {
     Returns 3 for mset
     Returns 4 for idea
     Returns 5 for ace
+    Returns 6 for non specific tech
     Returns -1 if no technology keywords are found
     */
     String [] cseeKeys = {"csee", "computer science", "electrical engineering", "programming", "coding", "cs", "ee"};
@@ -78,7 +83,7 @@ public class TBot extends BoscoBot {
     String [] msetKeys = {"mset", "materials", "metalurgy", "metal tech"};
     String [] ideaKeys = {"idea", "design", "integrated design", "engineering and art"};
     String [] aceKeys = {"ace", "architecture", "cunstruction", "civil engineering", "home depot"};
-
+    String [] techs = {"tech", "techs", "technology", "technologies", "majors"};
     // csee
     for(int i = 0; i < cseeKeys.length; i++)
     {
@@ -119,10 +124,18 @@ public class TBot extends BoscoBot {
         return 5; // 5 For ace
       }
     }
+    // Non-specific tech
+    for(int i = 0; i < techs.length; i++)
+    {
+      if(findKeyword(statement.toLowerCase(), techs[i], 0) >= 0)
+      {
+        return 6;
+      }
+    }
     // No technologies found
     return -1;
   }
-  public int findQuestion()
+  private int findQuestion()
   {
     /*
     Returns 1 for what
@@ -157,6 +170,7 @@ public class TBot extends BoscoBot {
       return -1;
     }
   }
+  @Override
   public String getResponse()
   {
     String response = "";
@@ -182,6 +196,10 @@ public class TBot extends BoscoBot {
       {
         response = "A student should choose CSEE if they are interested in computers, electrical engineering, or like math and logic";
       }
+      else
+      {
+        response = "CSEE is where all of the smart kids go!";
+      }
     }
     else if(mat)
     {
@@ -196,6 +214,10 @@ public class TBot extends BoscoBot {
       else if(why)
       {
         response = "A student should choose MAT if they are interested in business, marketing, and art.";
+      }
+      else
+      {
+        response = "MAT is where the a e s t h e t i c s are!";
       }
     }
     else if(mset)
@@ -212,6 +234,10 @@ public class TBot extends BoscoBot {
       {
         response = "A student should choose MSET if they are interested in chemistry, forensics, or medicine.";
       }
+      else
+      {
+        response = "MSET is well known for Mr. Curiel's hillarious roasts!";
+      }
     }
     else if(idea)
     {
@@ -226,6 +252,10 @@ public class TBot extends BoscoBot {
       else if(why)
       {
         response = "A student should choose IDEA if they are interested in design, mechanical engineering, or want to be an inventor.";
+      }
+      else
+      {
+        response = "IDEA's robotics team sure is cool!";
       }
     }
     else if(ace)
@@ -242,10 +272,21 @@ public class TBot extends BoscoBot {
       {
         response = "A student should choose ACE if they are interested in buildings, architecture, or aspire to work at home depot.";
       }
+      else
+      {
+        response = "ACE is fun for architecture!";
+      }
     }
     else
     {
-      response = "";
+      if(foundTech)
+      {
+        response = "The five technologies are CSEE, MAT, MSET, IDEA, and ACE.";
+      }
+      else
+      {
+        response = "";
+      }
     }
     return response;
   }
