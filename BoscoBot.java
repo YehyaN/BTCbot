@@ -2,7 +2,7 @@ import java.util.Random;
  //author Yehya Nasser, James Villagrana
  //version October 2017
 
-public class BoscoBot
+public abstract class BoscoBot
 {
 
 	public String getGreeting()
@@ -13,10 +13,13 @@ public class BoscoBot
 	{
 		return "Type in 'Bye' to exit.";
 	}
-	public String getName(String name)
+	public String getName(String statement)
 	{
-		System.out.println("Nice to meet you, " + name);
-		return " ";
+		String
+		if (statement.contains("name"))
+		{
+
+		}
 	}
 
 	public String getResponse(String statement)

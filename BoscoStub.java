@@ -14,6 +14,7 @@ public class BoscoStub
 
 		System.out.println (john.typeWriter(john.getGreeting()));
 		System.out.println (john.typeWriter(john.getExitMessage()));
+		System.out.println (john.typeWriter(john.getName(statement)));
 		Scanner in = new Scanner (System.in);
 		String statement = in.nextLine();
 
