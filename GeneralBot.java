@@ -30,24 +30,6 @@ public class GeneralBot extends BoscoBot // Used for general, non-bosco specific
   {
     return "Type in 'Bye' to exit.";
   }
-  public String typeWriter(String statement)
-  {
-    for(int i = 0; i < statement.length(); i++)
-    {
-      char result;
-      result = statement.charAt(i);
-      System.out.printf("%c", result);
-      try
-      {
-          Thread.sleep(25);//0.5s pause between characters
-      }
-      catch(InterruptedException ex)
-      {
-          Thread.currentThread().interrupt();
-      }
-    }
-    return " ";
-  }
   public String getRandomResponse () // Concrete -- Important, we'll get to this later
   {
    String [] randomResponses = {"Interesting, tell me more",
