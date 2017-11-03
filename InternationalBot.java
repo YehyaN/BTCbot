@@ -98,9 +98,9 @@ public class InternationalBot extends BoscoBot // Used for international stateme
 
     String [] processKeys = {"process"};
     String [] requirementsKeys = {"requirements"};
-    String [] homestayKeys = {"homestay", "home", "living"};
+    String [] homestayKeys = {"homestay", "home", "living", "stay"};
     String [] insuranceKeys = {"insurance", "medical", "eduabroad", "gateway"};
-    String [] contactKeys = {"contact", "information"};
+    String [] contactKeys = {"contact", "information", "questions"};
     String [] internationalKeys = {"international", "foreign exchange student", "foreign"};
     // process
     for(int i = 0; i < processKeys.length; i++)
@@ -200,102 +200,55 @@ public class InternationalBot extends BoscoBot // Used for international stateme
       }
       else if(how)
       {
-        response = "You can apply to Bosco Tech as a international  in a few eassy steps.";
+        response = "You can apply to Bosco Tech as a international student in a few eassy steps.";
       }
       else if(process)
       {
         if(what)
         {
-          response = "CSEE stands for Computer Science and Electrical Engineering. In CSEE, we learn how to program in C++, Java, and Python and basic electronics principals.";
-        }
-        else if(who)
-        {
-          response = "The teachers in CSEE are Edward Sepulveda and Al Lopez.";
-        }
-        else if(why)
-        {
-          response = "A student should choose CSEE if they are interested in computers, electrical engineering, or like math and logic";
+          response = "1) APPLICATION:  A $100.00 application fee is due when the application is submitted.\nApplicants are encouraged to apply by May 1 for the upcoming school year.  Fees are\nnon-refundable.\n2) PARENT'S E-MAIL AND CONTACT INFORMATION:  All applications must include the email\naddress and contact information of the parents or guardian of applicant.\n3) GRADES/TRANSCRIPT:  Must provide academic transcripts from the applicants current\nschool.  A minimum of 3.0 is required.  Transcripts must be translated into English.\n4) TEACHER/DIRECTOR RECOMMENDATION:  Please submit one or more\nrecommendation(s).\n5) CURRENT PASSPORT:  submit a copy of current passport.\n6) FINANCIAL MEANS OF SUPPORT:  Documentation verifying funds translated into U.S.\ncurrency is required by the Department of Homeland Security.";
         }
         else
         {
-          response = "CSEE is where all of the smart kids go!";
+          response = "You can apply to Bosco Tech as a international student in a few eassy steps.";
         }
       }
       else if(requirements)
       {
         if(what)
         {
-          response = "MAT stands for Media Arts Technology. In MAT they learn marketing, app design, web design, and Photoshop.";
-        }
-        else if(who)
-        {
-          response = "The teachers in MAT are Brendan Chua and Casey Hernandez.";
-        }
-        else if(why)
-        {
-          response = "A student should choose MAT if they are interested in business, marketing, and art.";
+          response = "1)Student must be a male between the ages of 13 to 16.\n2) Minimum TOEFL score of at least 76.\n3) Academic performance with an average 3.0 g.p.a. (grade point average).*\n4) A proficiency in the English language.\n5) Good behavior as a student enrolled at Bosco Tech is expected to follow a set of standards\nthat reflect Catholic-Christian moral and spiritual values.\n6) Social maturity, flexibility, and willingness to full engage in the Bosco Tech community.";
         }
         else
         {
-          response = "MAT is where the a e s t h e t i c s are!";
+          response = "International students are required to take a few steps while applying.";
         }
       }
       else if(homestay)
       {
-        if(what)
+        if(who)
         {
-          response = "MSET stands for Materials Science Engineering Technology. In MSET they learn about materials and how they work.";
-        }
-        else if(who)
-        {
-          response = "The teachers in MSET are Jim Curiel and Gaurav Nagalia.";
-        }
-        else if(why)
-        {
-          response = "A student should choose MSET if they are interested in chemistry, forensics, or medicine.";
+          response = "You can contact the Location Director, Hiromi Shimamura for EduAbroad, at 858-605-0085 or\nyou can contact the Location Director, Julien Yang for Gateway, at 626-551-4491";
         }
         else
         {
-          response = "MSET is well known for Mr. Curiel's hillarious roasts!";
+          response = "Bosco Tech welcomes qualified students from all over the world to be part of our unique curriculum. A\nprospective international (or out-of-state) student can use EduAbroad or Gateway Education USA\nhelp facilitate the process of picking a host family. These organizations will guide you through the\nprocess of picking and ultimately finding a home for the student to stay in while studying at Bosco Tech.\nThe application and payment process goes through these companies. Bosco Tech does not provide\nhousing for any students.";
         }
       }
       else if(insurance)
       {
-        if(what)
+        if(who)
         {
-          response = "IDEA stands for Integrated Design Engineering and Art. In IDEA, they learn design and prototyping aswell as some architecture and robotics.";
-        }
-        else if(who)
-        {
-          response = "The teachers in IDEA are Luis Garza and Rory Mulcahey.";
-        }
-        else if(why)
-        {
-          response = "A student should choose IDEA if they are interested in design, mechanical engineering, or want to be an inventor.";
+          response = "More information is on the Insurance For Students website.";
         }
         else
         {
-          response = "IDEA's robotics team sure is cool!";
+          response = "We require ALL students to have medical insurance in the chance there is any medical emergency so\nthat he will have an opportunity to receive the necessary treatment.";
         }
       }
       else if(contact)
       {
-        if(what)
-        {
-          response = "ACE stands for Architecture and Cunstruction Engineering. In ACE, they learn about architecture, civil engineering, and green energy.";
-        }
-        else if(who)
-        {
-          response = "The teachers in ACE are Clifford Reid and Diego Lopez.";
-        }
-        else if(why)
-        {
-          response = "A student should choose ACE if they are interested in buildings, architecture, or aspire to work at home depot.";
-        }
-        else
-        {
-          response = "ACE is fun for architecture!";
-        }
+        response = "Please contact Olivia Kelly at 626-940-2011 or Okelly@boscotech.edu for anymore questions.";
       }
       else
       {
