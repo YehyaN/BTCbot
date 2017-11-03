@@ -53,7 +53,7 @@ public class BoscoStub
 			System.out.print("> ");
 			statement = s.nextLine();
 			gBot.newStatement(statement);
-			if(statement.toLowerCase() != "bye")
+			if(!statement.toLowerCase().equals("bye"))
 			{
 				if(gBot.foundGeneral)
 				{
