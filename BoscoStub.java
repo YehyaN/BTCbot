@@ -18,16 +18,36 @@ public class BoscoStub
 		return "";
 	}
 
+	public static void typeWriter(String statement)
+  {
+    for(int i = 0; i < statement.length(); i++)
+    {
+      char result;
+      result = statement.charAt(i);
+      System.out.printf("%c", result);
+      try
+      {
+          Thread.sleep(10);//0.1s pause between characters
+      }
+      catch(InterruptedException ex)
+      {
+          Thread.currentThread().interrupt();
+      }
+    }
+		System.out.print('\n');
+  }
+
 	public static void main(String[] args)
 	{
 		String statement = "";
 		boolean isTalking = true;
 		GeneralBot gBot = new GeneralBot();
 
-		System.out.println(gBot.getGreeting());
-		System.out.println(gBot.getExitMessage());
+		typeWriter(gBot.getGreeting());
+		typeWriter(gBot.getExitMessage());
 		String response = "";
-		while(isTalking)
+
+		while(isTalking) // Conversation Loop
 		{
 			Scanner s = new Scanner(System.in);
 			System.out.print("> ");
@@ -47,7 +67,7 @@ public class BoscoStub
 						response = gBot.getRandomResponse();
 					}
 				}
-				System.out.println(response);
+				typeWriter(response);
 			}
 			else
 			{
