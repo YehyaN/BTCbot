@@ -18,6 +18,16 @@ public class BoscoStub
 		return "";
 	}
 
+	public static String respondA(String statement)
+	{
+		ABot techBotA = new ABot(statement);
+		if(techBotA.foundClass)
+		{
+			return techBotA.getResponse();
+		}
+		return "";
+	}
+
 	public static void typeWriter(String statement)
   {
     for(int i = 0; i < statement.length(); i++)
@@ -62,6 +72,7 @@ public class BoscoStub
 				else
 				{
 					response = respond(statement);
+					response = respondA(statement);
 					if(response == "")
 					{
 						response = gBot.getRandomResponse();
