@@ -5,7 +5,7 @@ public class AlumniBot extends BoscoBot // Used for technology statements
   private boolean csee, mat, mset, idea, ace;
   private boolean what, who, when, how, why;
   private boolean foundQuestion;
-  TBot(String sentence)
+  AlumniBot(String sentence)
   {
     statement = sentence;
     // Check to see if the statement involves technologies

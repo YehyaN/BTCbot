@@ -1,11 +1,11 @@
 public class CSBot extends BoscoBot //Anthony (D & R)
 {
+  public boolean foundTech;
   @Override
   public String getResponse()
   {
-    public boolean foundTech;
 
-    else if(findKeyword(statement.toLowerCase(), "liturgy schedule") >= 0)
+    if(findKeyword(statement.toLowerCase(), "liturgy schedule") >= 0)
     {
       response = "This is our Liturgy Schedule:\n Liturgy Schedule: School begins at 8:00 a.m. \n First Bell 	7:50 a.m. \n FIRST BLOCK (A1/B1) 	8:00 - 9:10 a.m. \n Break 	9:10 - 9:20 a.m. \n SECOND BLOCK (A2/B2) 	9:20 - 10:25 a.m.\n LITURGY 	10:35 - 11:50 a.m.\n Lunch 	11:50 - 12:45 p.m. \n THIRD BLOCK (A3/B3) 	12:45 - 1:50 p.m. \n Break 	1:50 - 2:00 p.m. \n FOURTH BLOCK (A4/B4) 	2:00 - 3:05 p.m. This is our Liturgical schedule! To see others, type one of these keywords and press ENTER:\n 'Schedule', 'Late Start Schedule', 'Morning Assembly Schedule', 'Afternoon Schedule', 'Standarized Test Prep Schedule'\n";
     }
@@ -42,3 +42,4 @@ public class CSBot extends BoscoBot //Anthony (D & R)
       response = "Bosco Tech is a member of the California Interscholastic Federation (CIF) and the Catholic Athletic Association (CAA). The Tigers compete with other high schools in nine interscholastic sports: baseball, basketball, cross-country, football, golf, soccer, tennis, track & field, and volleyball.";
     }
   }
+}

@@ -8,7 +8,6 @@ public class InternationalBot extends BoscoBot // Used for international stateme
   InternationalBot(String sentence)
   {
     statement = sentence;
-    // Check to see if the statement involves technologies
     process = false; requirements = false; homestay = false; insurance = false; contact = false;
     international = false; what = false; who = false; when = false; how = false; why = false;
     if (willInternational() == 6){

@@ -11,9 +11,13 @@ public class BoscoStub
 	public static String respond(String statement)
 	{
 		TBot techBot = new TBot(statement);
+		InternationalBot iBot = new InternationalBot(statement);
 		if(techBot.foundTech)
 		{
 			return techBot.getResponse();
+		}
+		else if (iBot.foundInternational){
+			return iBot.getResponse();
 		}
 		return "";
 	}
@@ -21,10 +25,35 @@ public class BoscoStub
 	public static String respondA(String statement)
 	{
 		ABot techBotA = new ABot(statement);
+		InternationalBot iBot = new InternationalBot(statement);
+		TBot techBot = new TBot(statement);
+		//FSBot fsBot = new FSBot(statement);
+		DBot dBot = new DBot(statement);
+		//CSBot csBot = new CSBot(statement);
+		//AlumniBot alumniBot = new AlumniBot(statement);
 		if(techBotA.foundClass)
 		{
 			return techBotA.getResponse();
 		}
+		else if(techBot.foundTech)
+		{
+			return techBot.getResponse();
+		}
+		else if (iBot.foundInternational){
+			return iBot.getResponse();
+		}
+		/*else if(fsBot.foundFutureStudent){
+			return fsBot.getResponse();
+		}*/
+		else if(dBot.foundDiscover){
+			return dBot.getResponse();
+		}
+		/*else if(csBot.foundTech){
+			return csBot.getResponse();
+		}
+		else if(alumniBot.foundTech){
+			return alumniBot.getResponse();
+		}*/
 		return "";
 	}
 

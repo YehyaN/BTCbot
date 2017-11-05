@@ -41,5 +41,6 @@ public class DBot extends BoscoBot // Used for discover statements
       response = "Tech hall has an extensive history.";
       foundDiscover = true;
     }
+    return response;
   }
 }

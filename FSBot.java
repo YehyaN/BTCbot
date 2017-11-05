@@ -5,7 +5,7 @@ public class FSBot extends BoscoBot // Used for technology statements
   private boolean admissionsprocess, shadow, fsp, summer;
   private boolean what, who, when, how, why;
   private boolean foundQuestion;
-  TBot(String sentence)
+  FSBot(String sentence)
   {
     statement = sentence;
     // Check to see if the statement involves technologies
@@ -211,7 +211,7 @@ public class FSBot extends BoscoBot // Used for technology statements
     {
       if(what)
       {
-        response = "The Tiger Shadow Program is an oppertuinty for prospective students to “shadow” a Bosco Tech Ambassador for a day and gain a real-life campus experience.\nStudent’s will enjoy a regular day of school, attending classes and eating lunch with his host, while meeting the school’s faculty, staff, and students.\nIn addition, he will learn about the school’s academic programs, extra-curricular activities, and the admissions process. ";
+        response = "The Tiger Shadow Program is an oppertuinty for prospective students to \"shadow\" a Bosco Tech Ambassador for a day and gain a real-life campus experience.\nStudent's will enjoy a regular day of school, attending classes and eating lunch with his host, while meeting the school's faculty, staff, and students.\nIn addition, he will learn about the school's academic programs, extra-curricular activities, and the admissions process. ";
       }
       else if(who)
       {
