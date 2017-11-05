@@ -30,10 +30,14 @@ public class BoscoStub
 		//FSBot fsBot = new FSBot(statement);
 		DBot dBot = new DBot(statement);
 		//CSBot csBot = new CSBot(statement);
-		//AlumniBot alumniBot = new AlumniBot(statement);
+		AlumniBot ALBot = new AlumniBot(statement);
 		if(techBotA.foundClass)
 		{
 			return techBotA.getResponse();
+		}
+		else if(ALBot.foundAlumni)
+		{
+			return ALBot.getResponse();
 		}
 		else if(techBot.foundTech)
 		{
@@ -51,9 +55,7 @@ public class BoscoStub
 		/*else if(csBot.foundTech){
 			return csBot.getResponse();
 		}
-		else if(alumniBot.foundTech){
-			return alumniBot.getResponse();
-		}*/
+		*/
 		return "";
 	}
 
@@ -82,8 +84,8 @@ public class BoscoStub
 		boolean isTalking = true;
 		GeneralBot gBot = new GeneralBot();
 
-		typeWriter(gBot.getGreeting());
-		typeWriter(gBot.getExitMessage());
+		System.out.println(gBot.getGreeting());
+		System.out.println(gBot.getExitMessage());
 		String response = "";
 
 		while(isTalking) // Conversation Loop
@@ -107,7 +109,7 @@ public class BoscoStub
 						response = gBot.getRandomResponse();
 					}
 				}
-				typeWriter(response);
+				System.out.println(response);
 			}
 			else
 			{
