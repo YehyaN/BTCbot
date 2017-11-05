@@ -106,6 +106,10 @@ public class AlumniBot extends BoscoBot // Used for technology statements
       {
         response = "The Alumni Association is involved with Bosco Tech by doantions, visiting campus, and attending class reunions.";
       }
+      else
+      {
+        response = "The mission of the Alumni Association is to organize alumni into a cohesive unit for the benefit of the school and all its members including alumni, students, faculty, staff and friends.";
+      }
     }
     return response;
   }
