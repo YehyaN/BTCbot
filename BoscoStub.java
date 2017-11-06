@@ -15,7 +15,7 @@ public class BoscoStub
 		ABot academicBot = new ABot(statement);
 		InternationalBot iBot = new InternationalBot(statement);
 		TBot techBot = new TBot(statement);
-		//FSBot fsBot = new FSBot(statement);
+		FSBot fsBot = new FSBot(statement);
 		DBot dBot = new DBot(statement);
 		CSBot csBot = new CSBot(statement);
 		AlumniBot alumniBot = new AlumniBot(statement);
@@ -40,6 +40,10 @@ public class BoscoStub
 		else if(alumniBot.foundAlumni)
 		{
 			return alumniBot.getResponse();
+		}
+		else if(fsBot.foundFutureStudent)
+		{
+			return fsBot.getResponse();
 		}
 		return "";
 	}

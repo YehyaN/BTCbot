@@ -163,11 +163,11 @@ public class FSBot extends BoscoBot // Used for technology statements
     String response = "";
     if(when)
     {
-      response = "Freshmen choose their technology majors in January.";
+      response = "Early Admission deadline: December 8, 2017\nRegular Admission deadline: February 10, 2018";
     }
     else if(how)
     {
-      response = "During the summer, incomming freshmen spend a week in each technology. After that, they narrow their selection down to 3 technologies that they spend 6 weeks in each during the first semester. Then, in January, they make their final technology selection.";
+      response = "You can apply at https://boscotech.edu/.";
     }
     else if(admissionsprocess)
     {
@@ -247,14 +247,9 @@ public class FSBot extends BoscoBot // Used for technology statements
     }
     else
     {
-      if(future)
-      {
-        response = "Visit Boscotech.edu to find out more. See you soon!";
-      }
-      else
-      {
+
         response = "";
-      }
+
     }
     return response;
   }
